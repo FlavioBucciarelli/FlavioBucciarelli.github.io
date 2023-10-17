@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="../../src/styles/fonts.css" rel="stylesheet" >
+<link href="style.css" rel="stylesheet" >
+
+<script src="./script.js" ></script>
+<script type="module" src="./lambdacalc.js" ></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambda</title>
+</head>
+<body>
+    <div class="dashboard" >
+        <div class="titlespace" >
+            <div onclick="getto('../home/index.html')" style="cursor: pointer" >
+                <h1 class="title lambda" >Lambda</h1>
+                <h1 class="primary name" >Flavio Bucciarelli</h1>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li onclick="showpage('calc')" id="dash_calc" class="chosenli" >
+                    <img class="labelicon" src="../../src/images/icons/flask.png" >
+                    <p class="primary labelfont" >Calcoli</p>
+                    <div class="choiceindicator" ></div>
+                </li>
+                <li onclick="showpage('mats')" id="dash_mats" >
+                    <img class="labelicon" src="../../src/images/icons/table.png" >
+                    <p class="primary labelfont" >Materiali e valori</p>
+                    <div class="choiceindicator" ></div>
+                </li>
+                <li onclick="showpage('info')" id="dash_info" >
+                    <img class="labelicon" src="../../src/images/icons/info.png" >
+                    <p class="primary labelfont" >Come funziona?</p>
+                    <div class="choiceindicator" ></div>
+                </li>
+            </ul>
+        </nav>
+
+        <div onclick="getto('../home/index.html')" class="quitbutton" >
+            <p class="primary quitfont" >Esci</p>
+        </div>
+    </div>
+
+    <main class="page-content" >
+        <article id="calc" >
+            <section class="list" >
+                <h2 class="primary" >Misurazioni</h2>
+                <h3 class="secondary descfont" style="margin-bottom: 73.85px;" >Ottenute dall'esperimento</h3>
+
+
+                <div id="measures-list" ></div><!--Lista di misurazioni-->
+
+
+                <div class="buttons-space">
+                    <div id="addbtn" class="button outlinedbutton" >
+                        <p class="secondary in-outlinedbutton-font" >Aggiungi</p>
+                    </div>
+
+                    <div id="calcbtn" class="button" style="background-color: #0B6FF4;" >
+                        <p class="secondary" style="color: white;" >Calcola</p>
+                        <img style="width: 39.1px; height: 39.1px; margin-left: 10.81px;" src="../../src/images/icons/inbtn_arrow.png" >
+                    </div>
+                </div>
+            </section>
+
+            <section class="calcs" >
+                <h2 class="primary" >Calcoli</h2>
+                <h3 class="secondary descfont" style="margin-bottom: 71.67px;" >Con almeno 2 istanti</h3>
+
+                
+                <h2 class="primary calc-title" >Dati</h2>
+                <div class="calc-container" >
+                    <p id="measures-num" style="transition-delay: 0;" class="secondary calc-text unappearing" ></p>
+                    <p id="temp-range" style="transition-delay: .2s;" class="secondary calc-text unappearing" ></p>
+                    <p id="length-range" style="transition-delay: .4s;" class="secondary calc-text unappearing" ></p>
+                </div>
+
+
+                <h2 class="primary calc-title" >Risultato</h2>
+                <div class="calc-container" style="margin-bottom: 86.88px; flex-direction: row;" >
+                    <p id="lambda-val" style="transition-delay: .6s;" class="secondary calc-text unappearing" ></p>
+                    <p id="lambda-exponent" style="transition-delay: .6s;" class="secondary exponent calc-text unappearing" >-10</p>
+                </div>
+
+
+                <div id="matbtn" class="button calc-text unappearing" style="background-color: #0B6FF4; transition-delay: 1s;" >
+                    <p class="secondary" style="color: white;" >Che materiale è?</p>
+                    <img style="width: 34.59px; height: 34.59px; margin-left: 10.81px;" src="../../src/images/icons/btn_flask.png" >
+                </div>
+            </section>
+        </article>
+
+        <div style="display: none;" id="mats" >
+            <h2 class="primary" >Tabella dei materiali</h2>
+            <h3 class="secondary descfont" id="mats_num" style="margin-bottom: 73.85px;" ></h3>
+
+            <div id="mats_table" class="table" >
+
+            </div>
+        </div>
+
+        <div style="display: none;" id="info" >
+            <p class="primary" >Calcolo del lambda</p>
+            <p class="secondary descfont" style="margin-bottom: 73.85px;" >
+                Il programma compie gli stessi processi da seguire per calcolare il lambda di un materiale a partire dalle misurazioni prese in laboratorio. 
+                Una volta raccolti i dati della temperatura e della variazione di lunghezza di un materiale in diversi istanti, queste due misurazioni vengono trattate come le coordinate x e y di un punto. 
+                Con questi punti che si vengono a formare, posso tracciare una retta di rigressione: 
+                il programma calcola il coefficiente angolare di questa retta, che corrisponde al lambda del materiale su cui è stato condotto l'esperimento.
+            </p>
+
+            <h2 class="primary" >Ricerca del materiale studiato</h2>
+            <h3 class="secondary descfont" >
+                Oltre al calcolo del lambda, il programma è capace di trovare il materiale su cui è stato condotto l'esperimento.
+                nel file fisica/src/data/materials.js, viene definita una lista di materiali, ognuno di questi con un nome, una descrizione, un'immagine e il corrispondente coefficiente di dilatazione lineare.
+                Una volta che il software ha calcolato il lambda, lo può confrontare con quello dei materiali della lista.
+                Il materiale con il lambda più vicino a quello calcolato sarà mostrato nella relativa schermata.
+                A causa degli errori di misurazione generati durante l'esperienza laboratoriale non sempre il software sarà in grado di trovare il materiale corretto.
+            </h3>
+        </div>
+    </main>
+
+    <div id="mat_page" class="otherpage" >
+        <img id="mat-bg" class="bg" loading="lazy" src="../../src/images/materials/aluminum.jpg" >
+        
+        <section class="content" >
+
+            <button id="back-btn" class="back-btn" >
+                <img style="width: 15.16px; height: 25.35px; object-fit: contain;" loading="lazy" src="../../src/images/icons/back.png" >
+            </button>
+
+            <div class="blurred-block" >
+                <div class="blurred-header" >
+                    <p id="mat-name" class="title" style="color: #1d1d1d;" >Mat-name</p>
+                </div>
+                <p id="mat-desc" class="primary mat-desc" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nesciunt id necessitatibus tempora animi quia quos qui quae iusto tempore!</p>
+                <p id="mat-lambda" class="secondary" style="margin-bottom: 76.3px; color: #2e2e2e;" >Coefficiente di dilatazione lineare: x.xx</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
