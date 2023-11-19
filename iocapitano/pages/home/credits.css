@@ -1,0 +1,38 @@
+@keyframes moving-canvas {
+    from {transform: translateY(0)}
+    to {display: none;}
+}
+
+.credits-canvas {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: none;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: fixed;
+    transform: translateY(-100vh);
+    animation-name: moving-canvas;
+    animation-duration: .5s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    padding: 96px;
+    z-index: 2;
+}
+
+.overflow-block {
+    overflow: hidden;
+}
+
+@keyframes text-frombottom {
+    from {transform: translateY(1cm);}
+}
+
+.name {
+    animation-name: text-frombottom;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-delay: .5s;
+}

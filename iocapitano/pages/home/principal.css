@@ -1,0 +1,66 @@
+.principal-screen {
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding-left: 96px;
+}
+
+.lower-page {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding-top: 135px;
+    padding-bottom: 144px;
+    padding-left: 96px;
+    padding-right: 96px;
+}
+
+.four-blocks {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.block {
+    width: calc(50% - 12px);
+    box-sizing: border-box;
+    height: min-content;
+    background-color: #434343;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 22px;
+    padding-bottom: 32px;
+}
+
+.start-button {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-width: 1.5px;
+    border-color: white;
+    border-style: solid;
+    transition: background-color .3s;
+}
+
+.in-start-button {
+    transition: color .3s;
+}
+
+.start-button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.start-button:hover .in-start-button {
+    color: black;
+}

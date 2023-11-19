@@ -1,0 +1,61 @@
+body {
+    width: 100vw;
+    background-color: #F9F9F9;
+    display: flex;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.absolute-screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F3F3F3;
+    position: absolute;
+}
+
+h1 {
+    color: #2e2e2e;
+}
+
+h2 {
+    color: #4e4e4e;
+}
+
+h3 {
+    color: #6e6e6e;
+    max-width: 50vw;
+}
+
+.article {
+    width: 53.47%;
+    background-color: 100%;
+    padding-top: 222px;
+    align-self: center;
+    z-index: 1;
+}
+
+.article-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.p-title {
+    margin-bottom: 9px;
+}
+
+.p-desc {
+    margin-bottom: 48px;
+}
+
+@keyframes move {
+    from {transform: translateY(1cm); opacity: 0;}
+}
+
+.anim {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+
+<link href="credits.css" rel="stylesheet" >
+<link href="../../fonts/fonts.css" rel="stylesheet" >
+<link href="principal.css" rel="stylesheet" >
+<link href="./style.css" rel="stylesheet" >
+
+<script src="script.js" ></script>
+
+<body>
+    <div id="credits-canvas" class="credits-canvas" >
+        <div class="overflow-block" >
+            <h2 class="title name" >Flavio Bucciarelli</h2>
+        </div>
+        <div class="overflow-block" >
+            <h2 class="title name" style="animation-delay: .7s;" >Tommaso Grieco</h2>
+        </div>
+        <div class="overflow-block" >
+            <h2 class="title name" style="animation-delay: .9s;" >Tommaso Spinelli</h2>
+        </div>
+        <div class="overflow-block" >
+            <h2 class="title name" style="animation-delay: 1.1s;" >Luca Volpi</h2>
+        </div>
+    </div>
+
+    <section class="principal-screen" >
+        <img id="bg" class="bg" onload="() => html_ref.scrollTo({left: 0})" src="../../imgs/home-principal.jpeg" >
+
+        <div style="z-index: 1" >
+            <h1 style="margin-bottom: 3px;" class="animtitle" >Oltre i confini</h1>
+            <h2 style="margin-bottom: 39px;" class="animdesc" >Vite sospese nell'immigrazione.</h2>
+            
+            <button onclick="scroll_toend()" class="discover-button animbtn" >
+                <h5>Scopri</h5>
+                <img class="bottomarrow-icon" src="../../imgs/bottomarrow.png" >
+            </button>
+        </div>
+    </section>
+
+    <section class="lower-page" >
+        <h2 style="margin-bottom: 9px;" >Di cosa si parlerà?</h2>
+        <h3 style="margin-bottom: 48px;" >
+            In questa presentazione si tratterà il film “Io Capitano”, un film che induce gli spettatori a riflettere su una realtà lontana, ma non per questo inesistente.
+        </h3>
+
+        <h2 style="margin-bottom: 17px;" >Saranno coperti vari temi:</h2>
+        <div id="four-blocks" class="four-blocks" >
+            <div class="block" style="margin-bottom: 24px;" >
+                <h2 style="margin-bottom: 6px;" >Le rotte migratorie</h2>
+                <h3 style="margin-bottom: 25px;" >Analizziamo il percorso intrapreso dai protagonisti.</h3>
+
+                <button onclick="open_page('route')" class="start-button" >
+                    <h5 class="in-start-button" >Inizia</h5>
+                </button>
+            </div>
+
+            <div class="block" style="margin-bottom: 24px;" >
+                <h2 style="margin-bottom: 6px;" >La speranza</h2>
+                <h3 style="margin-bottom: 25px;" >L'emigrazione dal punto di vista emotivo.</h3>
+
+                <button onclick="open_page('travel')" class="start-button" >
+                    <h5 class="in-start-button" >Inizia</h5>
+                </button>
+            </div>
+
+            <div class="block" >
+                <h2 style="margin-bottom: 6px;" >L'ospitalità</h2>
+                <h3 style="margin-bottom: 25px;" >Un tema che getta le sue radici nell'Antica Grecia.</h3>
+
+                <button onclick="open_page('hospitality')" class="start-button" >
+                    <h5 class="in-start-button" >Inizia</h5>
+                </button>
+            </div>
+
+            <div class="block" >
+                <h2 style="margin-bottom: 6px;" >I diritti umani</h2>
+                <h3 style="margin-bottom: 25px;" >Un confronto sociale con gli eventi della trama.</h3>
+
+                <button onclick="open_page('rights')" class="start-button" >
+                    <h5 class="in-start-button" >Inizia</h5>
+                </button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
