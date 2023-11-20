@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
     width: 100vw;
     max-width: 100vw;
     overflow-x: hidden;
@@ -16,7 +15,7 @@ html, body {
 
 .bg {
     object-fit: cover;
-    width: 105vw;
+    width: 100vw;
     height: 100vh;
     object-position: center center;
     opacity: .5;
@@ -25,6 +24,7 @@ html, body {
 }
 
 .animating-bg {
+    width: 105vw;
     animation-name: move-bg;
     animation-duration: 2s;
     animation-delay: 3s;

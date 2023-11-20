@@ -16,7 +16,6 @@ window.onload = () => {
     const html_ref = document.querySelector("html")
     html_ref.scrollTo({left: 0})
     const didPlayAnimation = sessionStorage.getItem("animationPlayed")
-    console.log(didPlayAnimation, "???", didPlayAnimation === "true")
 
     if (didPlayAnimation !== "true") {
         const bg = document.getElementById("bg")
@@ -24,6 +23,5 @@ window.onload = () => {
         credits.style.display = "flex"
         bg.classList.add("animating-bg")
         sessionStorage.setItem("animationPlayed", "true")
-        console.log("Setting item.", sessionStorage.getItem("animationPlayed"))
     }
 }
