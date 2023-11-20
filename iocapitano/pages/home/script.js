@@ -15,14 +15,15 @@ function open_page(page) {
 window.onload = () => {
     const html_ref = document.querySelector("html")
     html_ref.scrollTo({left: 0})
-    console.log("Scrolled left 0")
     const didPlayAnimation = sessionStorage.getItem("animationPlayed")
+    console.log(didPlayAnimation, "???", didPlayAnimation === "true")
 
-    if (!didPlayAnimation) {
-        sessionStorage.setItem("animationPlayed", true)
+    if (didPlayAnimation !== "true") {
         const bg = document.getElementById("bg")
         const credits = document.getElementById("credits-canvas")
         credits.style.display = "flex"
         bg.classList.add("animating-bg")
+        sessionStorage.setItem("animationPlayed", "true")
+        console.log("Setting item.", sessionStorage.getItem("animationPlayed"))
     }
 }
