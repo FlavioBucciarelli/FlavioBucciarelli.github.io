@@ -70,7 +70,7 @@ video {
 }
 
 .map {
-    width: 990px;
-    height: 556px;
-    object-fit: cover;
+    height: 35vh;
+    width: min-content;
+    object-fit: contain;
 }
