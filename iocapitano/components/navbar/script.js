@@ -13,7 +13,7 @@ function create_navbar() {
     backspace.onclick = () => history.back()
     const backImg = document.createElement("img")
     backImg.classList.add("back-img")
-    backImg.src = `../../imgs/backarrow-${colormode}.png`
+    backImg.src = `../../imgs/backarrow-${colormode == "none" ? "dark" : colormode}.png`
     const backtext = document.createElement("h3")
     backtext.style = `color: ${textColor}; margin-bottom: 0`
     backtext.innerHTML = "Indietro"
