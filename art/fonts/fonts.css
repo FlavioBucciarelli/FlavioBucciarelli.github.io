@@ -1,0 +1,100 @@
+:root {
+    --h1max: 42;
+    --h2max: 35;
+    --h3max: 27;
+    --h4max: 21;
+
+    --coef: 1.5;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../fonts/inter.ttf");
+}
+
+h1 {
+    font-family: Inter;
+    font-size: calc(var(--h1max) / var(--coef) * 1px);
+    font-weight: 700;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-family: Inter;
+    font-size: calc(var(--h3max) / var(--coef) * 1px);
+    white-space: pre-line;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .8);
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    font-family: Inter;
+    font-size: calc(var(--h3max) / var(--coef) * 1px);
+    white-space: pre-line;
+    font-weight: 400;
+    color: white;
+    padding: 0;
+    margin: 0;
+    transition: color .3s;
+}
+
+input {
+    font-family: Inter;
+    font-size: calc(var(--h3max) / var(--coef) * 1.3px);
+    white-space: pre-line;
+    font-weight: 400;
+    color: white;
+    padding: 0;
+    margin: 0;
+    transition: color .3s;
+}
+
+h4 {
+    font-family: Inter;
+    font-size: calc(var(--h4max) / var(--coef) * 1px);
+    font-weight: 300;
+    color: white;
+    opacity: .8;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 568px) {
+    h1 {
+        font-size: calc((var(--h1max) / var(--coef) * 1px) + ( var(--h1max) * ( 1 - ( 1 / var(--coef) ) ) ) * (100vw - 568px) / (768 - 568));
+    }
+
+    h2 {
+        font-size: calc((var(--h2max) / var(--coef) * 1px) + ( var(--h2max) * ( 1 - ( 1 / var(--coef) ) ) ) * (100vw - 568px) / (768 - 568));
+    }
+
+    h3 {
+        font-size: calc((var(--h3max) / var(--coef) * 1px) + ( var(--h3max) * ( 1 - ( 1 / var(--coef) ) ) ) * (100vw - 568px) / (768 - 568));
+    }
+
+    h4 {
+        font-size: calc((var(--h4max) / var(--coef) * 1px) + ( var(--h4max) * ( 1 - ( 1 / var(--coef) ) ) ) * (100vw - 568px) / (768 - 568));
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: calc(var(--h1max) * 1px);
+    }
+
+    h2 {
+        font-size: calc(var(--h2max) * 1px);
+    }
+
+    h3 {
+        font-size: calc(var(--h3max) * 1px);
+    }
+
+    h4 {
+        font-size: calc(var(--h4max) * 1px);
+    }
+}
