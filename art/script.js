@@ -681,112 +681,6 @@ const songs = [
         ]
     },
     {
-        name: "south",
-        bpms: [
-            {
-                val: 278,
-                count: -1,
-                action: c => {
-                    console.log(c)
-                    const tile = tileDuration(278 * 2) * 2
-                    if (c === 3 || c === 8 || c === 12 || c === 24 || c === 29 || c === 33 || c === 45 || c === 50 || c === 54 || c === 66 || c === 71 || c === 75) {
-                        const blocks_number = c <= 12 ? 1 : c >= 24 && c <= 33 ? 2 : c >= 45 && c <= 54 ? 3 : 4
-                        const index = Array.from(Array(blocks_number).keys()).map(() => (Math.round(Math.random() * (blocks.length - 1))))
-                        const middle_time = ((c === 3 || c === 24 || c === 45 || c === 66) ? 3 : (c === 8 || c === 29 || c === 50 || c === 71) ? 2 : 1.4) * tile
-                        pulse([
-                            {colors: "#FF000070", times: {start: 100, middle: middle_time, end: 150}, type: "bg"},
-                            {colors: "#000", index, times: {start: 100, middle: middle_time, end: 150}},
-                            {colors: "#FF0000", index, times: {start: 100, middle: tile, end: 150, delay: middle_time}},
-                            {colors: "rgba(255, 0, 0, .2)", times: {start: 100, middle: tile, end: 150, delay: middle_time}, type: "light"}
-                        ])
-                    } else if (c === 86 || c === 92 || c === 95) {
-                        const index = c === 86 ? 132 : c === 92 ? 95 : 123
-                        pulse([
-                            {colors: "#FF000070", index, times: {start: 100, middle: tile * 25, end: 150}},
-                            {colors: "rgba(255, 0, 0, .2)", times: {start: 100, middle: tile, end: 150}, type: "light"}
-                        ])
-                    } else if (c === 103) {
-                        pulse([
-                            {colors: "#FF000070", index: 4, times: {start: 100, middle: 100, end: 350}},
-                            {colors: "rgba(255, 0, 0, .4)", times: {start: 100, middle: 100, end: 350}, type: "light"},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [4, 3, 38, 39, 40, 5], times: {start: 300, middle: tile * 6, end: 700, delay: 300}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [2, 37, 68, 69, 41, 42, 43, 6], times: {start: 300, middle: tile * 6, end: 700, delay: 320}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [1, 35, 36, 66, 67, 94, 70, 71, 72, 73, 74, 44, 7], times: {start: 300, middle: tile * 6, end: 700, delay: 340}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [0, 34, 65, 91, 92, 93, 116, 117, 95, 96, 97, 98, 75, 45, 8], times: {start: 300, middle: tile * 6, end: 700, delay: 360}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [33, 64, 90, 113, 114, 115, 129, 128, 118, 119, 120, 99, 76, 46, 9], times: {start: 300, middle: tile * 6, end: 700, delay: 380}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [32, 63, 89, 112, 130, 132, 127, 126, 125, 124, 121, 101, 100, 77, 47, 10], times: {start: 300, middle: tile * 6, end: 700, delay: 400}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [31, 111, 131, 109, 108, 107, 106, 123, 122, 102, 78, 48, 11], times: {start: 300, middle: tile * 6, end: 700, delay: 420}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [30, 62, 88, 110, 86, 85, 84, 105, 104, 103, 80, 79, 49, 12], times: {start: 300, middle: tile * 6, end: 700, delay: 440}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [29, 61, 87, 60, 58, 59, 57, 83, 82, 81, 50, 51, 13], times: {start: 300, middle: tile * 6, end: 700, delay: 460}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [28, 27, 26, 25, 24, 23, 56, 55, 54, 53, 14, 15], times: {start: 300, middle: tile * 6, end: 700, delay: 480}},
-                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [22, 21, 20, 19, 52, 18, 17, 16], times: {start: 300, middle: tile * 6, end: 700, delay: 500}},
-                        ])
-                    } else if (c === 125) {
-                        pulse([
-                            {colors: "#FF000090", index: 118, times: {start: 300, middle: tile * 6, end: 700}},
-                            {colors: "#FF000050", index: [128, 127, 126, 125, 119, 95, 117], times: {start: 300, middle: tile * 6, end: 700, delay: 150}},
-                            {colors: "#FF000030", index: [116, 129, 132, 108, 107, 106, 123, 124, 120, 96, 71, 70, 94], times: {start: 300, middle: tile * 6, end: 700, delay: 300}},
-                        ])
-                    } else if (c === 144) {
-                        pulse([
-                            {colors: "#FF000090", index: 28, times: {start: 300, middle: tile * 6, end: 700}},
-                            {colors: "#FF000050", index: [29, 62, 61, 27], times: {start: 300, middle: tile * 6, end: 700, delay: 100}},
-                            {colors: "#FF000030", index: [30, 31, 63, 88, 87, 60, 26, 87, 26, 25, 24], times: {start: 300, middle: tile * 6, end: 700, delay: 200}},
-                        ])
-                    } else if (c === 146) {
-                        pulse([
-                            {colors: "#FF000090", index: 8, times: {start: 300, middle: tile * 6, end: 700}},
-                            {colors: "#FF000050", index: [7, 45, 9, 46, 10], times: {start: 300, middle: tile * 6, end: 700, delay: 100}},
-                            {colors: "#FF000030", index: [11, 48, 77, 76, 75, 44, 6, 47, 12], times: {start: 300, middle: tile * 6, end: 700, delay: 200}},
-                        ])
-                    } else if (c === 167 || c === 186 || c === 206 || c === 225 || c === 320 || c === 339 || c === 359 || c === 378) {
-                        pulse([ 
-                            {colors: "#FF0000", times: {start: 50, middle: tile, end: 150}, type: "bg"},
-                            {colors: "rgba(255, 127.5, 0, .1)", times: {start: 50, middle: 100, end: 50}, type: "light"},
-                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
-                        ])
-                    } else if (c === 168 || c === 187 || c === 207 || c === 226 || c === 321 || c === 340 || c === 360 || c === 379) {
-                        pulse([
-                            {colors: "#FF000010", times: {start: 50, middle: tile, end: 150}, type: "bg"},
-                            {colors: "rgba(255, 0, 0, .1)", times: {start: 50, middle: 100, end: 50}, type: "light"},
-                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
-                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
-                        ])
-                    } else if (
-                        c === 169 || c === 170 || c === 171 || c === 174 || c === 175 || c >= 178 && c <= 182 || c >= 189 && c <= 191 ||
-                        c === 194 || c === 195 || c >= 197 && c <= 200 || c >= 207 && c <= 210 || c === 213 || c === 214 || c >= 217 && c <= 221 ||
-                        c >= 228 & c <= 230 || c === 233 || c === 234 || c >= 237 && c <= 240 ||
-                        c >= 322 && c <= 324 || c === 327 || c === 328 || c >= 331 && c <= 335 ||
-                        c >= 342 && c <= 344 || c === 347 || c === 348 || c >= 350 && c <= 352 ||
-                        c >= 361 && c <= 363 || c === 366 || c === 367 || c >= 370 && c <= 374 ||
-                        c >= 381 && c <= 383 || c === 385 || c === 386 || c >= 389 && c <= 393
-                    ) {
-                        const indexes = group_coords[Math.round(Math.random() * (group_coords.length - 1))]
-                        pulse([
-                            {colors: "#FF000070", index: indexes, times: {start: 0, middle: tile, end: 300}},
-                            {colors: "rgba(255, 0, 0, .2)", times: {start: 50, middle: tile * 4, end: 300}, type: "light"},
-                        ])
-                    } else if (c >= 245 && c < 320) {
-                        pulse([
-                            {colors: "#FF000070", times: {start: 50, middle: tile, end: 300}},
-                            {colors: "#FF000070", times: {start: 50, middle: tile, end: 300}},
-                            {colors: "rgba(255, 0, 0, .2)", times: {start: 50, middle: tile, end: 300}, type: "light"},
-                        ])
-                    }
-                }
-            },
-        ]
-    },
-    {
         name: "blues",
         bpms: [
             {
@@ -812,10 +706,10 @@ const songs = [
                     } else if (count === 3 || count === 56) {
                         animations.linear_expansive({colors, times: {start: 300, middle: tile * 2, end: 700, speed: 25}})
                     } else if (
-                        count === 12 || count === 17 || count === 38 || count === 43 || count === 64 || count === 69 || count === 77 || count === 79 || count === 81 || count === 115 || count === 120 || count === 140 || count === 145 || count === 165 || count === 169 || 
-                        count === 178 || count === 180 || count === 182 || count === 188 || count === 194 ||
-                        count === 215 || count === 218 || count === 220 || count === 240 || count === 242 || count === 243 || count === 245 ||
-                        count === 281 || count === 286 || count === 290
+                        count === 12 || count === 17 || count === 38 || count === 43 || count === 64 || count === 69 || count === 77 || count === 79 || count === 81 || count === 115 || count === 120 || count === 142 || count === 147 || count === 169 || count === 172 || 
+                        count === 180 || count === 183 || count === 185 || count === 192 || count === 199 ||
+                        count === 219 || count === 224 || count === 226 || count === 247 || count === 248 || count === 249 || count === 250 ||
+                        count === 289 || count === 293 || count === 295
                         ) {
                         const indexes = group_coords[Math.round(Math.random() * (group_coords.length - 1))]
                         pulse([
@@ -825,15 +719,15 @@ const songs = [
                             {colors, index: indexes[3] || null, times: {start: 300, middle: tile, end: 700}},
                             {colors: "rgba(255, 255, 255, .1)", times: {start: 100, middle: tile, end: 300}, type: "light"},
                         ])
-                    } else if (count === 104 || count === 132 || count === 154) {
+                    } else if (count === 104 || count === 133 || count === 156) {
                         pulse({colors, index: [118, 126, 127, 128], times: {start: 700, middle: tile, end: 700}})
-                    } else if (count === 105 || count === 131 || count === 156) {
+                    } else if (count === 105 || count === 132 || count === 158) {
                         pulse({colors, index: [106, 107, 132, 129, 116, 117, 95, 119, 125, 123,], times: {start: 700, middle: tile, end: 700}})
-                    } else if (count === 106 || count === 130 || count === 155) {
+                    } else if (count === 106 || count === 131 || count === 160) {
                         pulse({colors, index: [114, 115, 93, 67, 94, 70, 71, 96, 97, 120, 124, 122, 121, 104, 105, 84, 85, 108, 109, 131, 130, 113, 92, 66, 37, 68, 69, 41, 72, 73, 98, 101, 99, 102, 103, 82, 83, 54, 55, 56, 57, 58, 86, 110, 111, 112, 91, 36, 42, 74, 87], times: {start: 700, middle: tile, end: 700}})
-                    } else if (count === 107 || count === 129 || count === 157) {
+                    } else if (count === 107 || count === 130 || count === 162) {
                         pulse({colors, index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 59, 60, 61, 62, 63, 64, 65, 74, 75, 76, 77, 78, 79, 80, 81, 87, 88, 89, 90, 91, 100], times: {start: 700, middle: tile, end: 700}})
-                    } else if (count === 203 || count === 227 || count === 252 || count === 258 || count === 265) {
+                    } else if (count === 208 || count === 234 || count === 260 || count === 264 || count === 271) {
                         pulse([
                             {colors, index: 22, times: {start: 300, middle: tile / 4, end: 300}},
                             {colors, index: 56, times: {start: 300, middle: tile / 4, end: 300, delay: 30}},
@@ -842,7 +736,7 @@ const songs = [
                             {colors, index: 126, times: {start: 300, middle: tile / 4, end: 300, delay: 120}},
                             {colors, index: 118, times: {start: 300, middle: tile, end: 300, delay: 150}},
                         ])
-                    } else if (count === 206 || count === 230 || count === 255 || count === 261 || count === 268) {
+                    } else if (count === 211 || count === 237 || count === 263 || count === 267 || count === 274) {
                         pulse([
                             {colors, index: [128, 117, 95, 96, 119, 125, 126, 127], times: {start: 100, middle: tile * 2, end: 700}},
                             {colors, index: [106, 107, 132, 129, 116, 94, 70, 71, 72, 97, 120, 124, 123], times: {start: 100, middle: tile * 2, end: 700, delay: 30}},
@@ -853,7 +747,7 @@ const songs = [
                             {colors, index: [7, 45, 46, 47, 12, 15, 18, 17, 25, 26, 61, 62, 63, 64, 34], times: {start: 100, middle: tile * 2, end: 700, delay: 180}},
                             {colors, index: [8, 9, 10, 11, 13, 14, 16, 27, 28, 29, 30, 31, 32, 33, 0], times: {start: 100, middle: tile * 2, end: 700, delay: 210}},
                         ])
-                    } else if (count >= 291 && count <= 303) {
+                    } else if (count >= 296 && count <= 306) {
                         pulse([
                             {colors, times: {start: 300, middle: tile, end: 300, delay: 150}},
                             {colors, times: {start: 300, middle: tile, end: 300, delay: 150, delay: tile / 2}},
@@ -1100,6 +994,112 @@ const songs = [
                             {colors: hexToRgbA(cols_singlear[0][0]), times: {start: 50, middle: tile, end: 300}, type: "light"},
 
                             {colors: cols_singlear[1], index: indexes[1], times: {start: 50, middle: tile / 2, end: 300, delay: tile / 2}},
+                        ])
+                    }
+                }
+            },
+        ]
+    },
+    {
+        name: "south",
+        bpms: [
+            {
+                val: 278,
+                count: -1,
+                action: c => {
+                    console.log(c)
+                    const tile = tileDuration(278 * 2) * 2
+                    if (c === 3 || c === 8 || c === 12 || c === 24 || c === 29 || c === 33 || c === 45 || c === 50 || c === 54 || c === 66 || c === 71 || c === 75) {
+                        const blocks_number = c <= 12 ? 1 : c >= 24 && c <= 33 ? 2 : c >= 45 && c <= 54 ? 3 : 4
+                        const index = Array.from(Array(blocks_number).keys()).map(() => (Math.round(Math.random() * (blocks.length - 1))))
+                        const middle_time = ((c === 3 || c === 24 || c === 45 || c === 66) ? 3 : (c === 8 || c === 29 || c === 50 || c === 71) ? 2 : 1.4) * tile
+                        pulse([
+                            {colors: "#FF000070", times: {start: 100, middle: middle_time, end: 150}, type: "bg"},
+                            {colors: "#000", index, times: {start: 100, middle: middle_time, end: 150}},
+                            {colors: "#FF0000", index, times: {start: 100, middle: tile, end: 150, delay: middle_time}},
+                            {colors: "rgba(255, 0, 0, .2)", times: {start: 100, middle: tile, end: 150, delay: middle_time}, type: "light"}
+                        ])
+                    } else if (c === 86 || c === 92 || c === 95) {
+                        const index = c === 86 ? 132 : c === 92 ? 95 : 123
+                        pulse([
+                            {colors: "#FF000070", index, times: {start: 100, middle: tile * 25, end: 150}},
+                            {colors: "rgba(255, 0, 0, .2)", times: {start: 100, middle: tile, end: 150}, type: "light"}
+                        ])
+                    } else if (c === 103) {
+                        pulse([
+                            {colors: "#FF000070", index: 4, times: {start: 100, middle: 100, end: 350}},
+                            {colors: "rgba(255, 0, 0, .4)", times: {start: 100, middle: 100, end: 350}, type: "light"},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [4, 3, 38, 39, 40, 5], times: {start: 300, middle: tile * 6, end: 700, delay: 300}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [2, 37, 68, 69, 41, 42, 43, 6], times: {start: 300, middle: tile * 6, end: 700, delay: 320}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [1, 35, 36, 66, 67, 94, 70, 71, 72, 73, 74, 44, 7], times: {start: 300, middle: tile * 6, end: 700, delay: 340}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [0, 34, 65, 91, 92, 93, 116, 117, 95, 96, 97, 98, 75, 45, 8], times: {start: 300, middle: tile * 6, end: 700, delay: 360}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [33, 64, 90, 113, 114, 115, 129, 128, 118, 119, 120, 99, 76, 46, 9], times: {start: 300, middle: tile * 6, end: 700, delay: 380}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [32, 63, 89, 112, 130, 132, 127, 126, 125, 124, 121, 101, 100, 77, 47, 10], times: {start: 300, middle: tile * 6, end: 700, delay: 400}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [31, 111, 131, 109, 108, 107, 106, 123, 122, 102, 78, 48, 11], times: {start: 300, middle: tile * 6, end: 700, delay: 420}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [30, 62, 88, 110, 86, 85, 84, 105, 104, 103, 80, 79, 49, 12], times: {start: 300, middle: tile * 6, end: 700, delay: 440}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [29, 61, 87, 60, 58, 59, 57, 83, 82, 81, 50, 51, 13], times: {start: 300, middle: tile * 6, end: 700, delay: 460}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [28, 27, 26, 25, 24, 23, 56, 55, 54, 53, 14, 15], times: {start: 300, middle: tile * 6, end: 700, delay: 480}},
+                            {colors: ["#FF0000", "#FF0000fa", "#FF0000aa", "#FF0000af"], index: [22, 21, 20, 19, 52, 18, 17, 16], times: {start: 300, middle: tile * 6, end: 700, delay: 500}},
+                        ])
+                    } else if (c === 125) {
+                        pulse([
+                            {colors: "#FF000090", index: 118, times: {start: 300, middle: tile * 6, end: 700}},
+                            {colors: "#FF000050", index: [128, 127, 126, 125, 119, 95, 117], times: {start: 300, middle: tile * 6, end: 700, delay: 150}},
+                            {colors: "#FF000030", index: [116, 129, 132, 108, 107, 106, 123, 124, 120, 96, 71, 70, 94], times: {start: 300, middle: tile * 6, end: 700, delay: 300}},
+                        ])
+                    } else if (c === 144) {
+                        pulse([
+                            {colors: "#FF000090", index: 28, times: {start: 300, middle: tile * 6, end: 700}},
+                            {colors: "#FF000050", index: [29, 62, 61, 27], times: {start: 300, middle: tile * 6, end: 700, delay: 100}},
+                            {colors: "#FF000030", index: [30, 31, 63, 88, 87, 60, 26, 87, 26, 25, 24], times: {start: 300, middle: tile * 6, end: 700, delay: 200}},
+                        ])
+                    } else if (c === 146) {
+                        pulse([
+                            {colors: "#FF000090", index: 8, times: {start: 300, middle: tile * 6, end: 700}},
+                            {colors: "#FF000050", index: [7, 45, 9, 46, 10], times: {start: 300, middle: tile * 6, end: 700, delay: 100}},
+                            {colors: "#FF000030", index: [11, 48, 77, 76, 75, 44, 6, 47, 12], times: {start: 300, middle: tile * 6, end: 700, delay: 200}},
+                        ])
+                    } else if (c === 167 || c === 186 || c === 206 || c === 225 || c === 320 || c === 339 || c === 359 || c === 378) {
+                        pulse([ 
+                            {colors: "#FF0000", times: {start: 50, middle: tile, end: 150}, type: "bg"},
+                            {colors: "rgba(255, 127.5, 0, .1)", times: {start: 50, middle: 100, end: 50}, type: "light"},
+                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#000000", times: {start: 50, middle: 100, end: 50}},
+                        ])
+                    } else if (c === 168 || c === 187 || c === 207 || c === 226 || c === 321 || c === 340 || c === 360 || c === 379) {
+                        pulse([
+                            {colors: "#FF000010", times: {start: 50, middle: tile, end: 150}, type: "bg"},
+                            {colors: "rgba(255, 0, 0, .1)", times: {start: 50, middle: 100, end: 50}, type: "light"},
+                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
+                            {colors: "#FF000070", times: {start: 50, middle: 100, end: 50}},
+                        ])
+                    } else if (
+                        c === 169 || c === 170 || c === 171 || c === 174 || c === 175 || c >= 178 && c <= 182 || c >= 189 && c <= 191 ||
+                        c === 194 || c === 195 || c >= 197 && c <= 200 || c >= 207 && c <= 210 || c === 213 || c === 214 || c >= 217 && c <= 221 ||
+                        c >= 228 & c <= 230 || c === 233 || c === 234 || c >= 237 && c <= 240 ||
+                        c >= 322 && c <= 324 || c === 327 || c === 328 || c >= 331 && c <= 335 ||
+                        c >= 342 && c <= 344 || c === 347 || c === 348 || c >= 350 && c <= 352 ||
+                        c >= 361 && c <= 363 || c === 366 || c === 367 || c >= 370 && c <= 374 ||
+                        c >= 381 && c <= 383 || c === 385 || c === 386 || c >= 389 && c <= 393
+                    ) {
+                        const indexes = group_coords[Math.round(Math.random() * (group_coords.length - 1))]
+                        pulse([
+                            {colors: "#FF000070", index: indexes, times: {start: 0, middle: tile, end: 300}},
+                            {colors: "rgba(255, 0, 0, .2)", times: {start: 50, middle: tile * 4, end: 300}, type: "light"},
+                        ])
+                    } else if (c >= 245 && c < 320) {
+                        pulse([
+                            {colors: "#FF000070", times: {start: 50, middle: tile, end: 300}},
+                            {colors: "#FF000070", times: {start: 50, middle: tile, end: 300}},
+                            {colors: "rgba(255, 0, 0, .2)", times: {start: 50, middle: tile, end: 300}, type: "light"},
                         ])
                     }
                 }
